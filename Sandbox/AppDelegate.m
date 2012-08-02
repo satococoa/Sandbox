@@ -16,6 +16,13 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    NSURL *url = [NSURL URLWithString:@"http://hamusoku.com/archives/7300943.html"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    
+    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"string: %@", str);
+    
     return YES;
 }
 
